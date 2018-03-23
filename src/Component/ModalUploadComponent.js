@@ -37,7 +37,7 @@ class ModalUploadComponent extends Component {
         }
 
         return (
-            <div className="modal show"
+            <div className="modal show animated bounceIn"
                  tabIndex="-1"
                  role="dialog"
                  aria-hidden="true"

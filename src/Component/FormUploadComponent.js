@@ -23,6 +23,12 @@ class FormUploadComponent extends Component {
     alertType = '';
     alertText = '';
 
+    domain = 'http://localhost:3001/';
+
+    fileType = '';
+    fileTypeDetect = '';
+    filePath = '';
+
     constructor(props) {
         super(props);
 
@@ -60,7 +66,8 @@ class FormUploadComponent extends Component {
         const data = new FormData();
         data.append('file', this.filesInput.files[0]);
         // '/files' is your node.js route that triggers our middleware
-        axios.post('http://localhost:3001/upload', data).then((response) => {
+
+        axios.post(this.domain+'upload', data).then((response) => {
             if(response.data.error!==0){
                 this.alertType = 'alert-danger';
                 this.alertText = 'Have trouble upload file!';
@@ -139,6 +146,7 @@ class FormUploadComponent extends Component {
                         </form>
 
                         <div className="file-info">
+
                         </div>
                     </div>
                 </div>
